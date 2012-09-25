@@ -23,4 +23,39 @@ describe Post do
 		before { @post.title = " " }
 		it { should_not be_valid }
 	end
+
+	describe "when title is too long" do
+		before { @post.title = "a" * 51 }
+		it { should_not be_valid }
+	end
+
+	describe "when content is not present" do
+		before { @post.content = " " }
+		it { should_not be_valid }
+	end
+
+	describe "when content is too long" do
+		before { @post.content = "a" * 501 }
+		it { should_not be_valid }
+	end
+
+	describe "when location is not present" do
+		before { @post.location = " " }
+		it { should_not be_valid }
+	end
+
+	describe "when location is too long" do
+		before { @post.location = "a" * 101 }
+		it { should_not be_valid }
+	end
+
+	describe "when price is not present" do
+		before { @post.price = " " }
+		it { should_not be_valid }
+	end
+
+	describe "when price is negative" do
+		before { @post.price = -1 }
+		it { should_not be_valid }
+	end
 end
