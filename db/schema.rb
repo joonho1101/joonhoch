@@ -14,7 +14,6 @@
 ActiveRecord::Schema.define(:version => 20120924025925) do
 
   create_table "comments", :force => true do |t|
-    t.string   "author"
     t.string   "content"
     t.integer  "post_id"
     t.datetime "created_at", :null => false
@@ -26,8 +25,9 @@ ActiveRecord::Schema.define(:version => 20120924025925) do
     t.string   "content"
     t.float    "price"
     t.string   "location"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_date"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "users", :force => true do |t|
