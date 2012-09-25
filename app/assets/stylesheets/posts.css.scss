@@ -1,3 +1,66 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.post {
+	border: 1px solid silver;
+	box-shadow: 0px 0px 20px rgba(0,0,0,.5);
+	padding: 10px;
+	margin: 20px;
+	width: 400px;
+	font-size: 13px;
+	float: left;
+	background: white;
+}
+
+.post-title {
+	color: #555555;
+	font-size: 15px;
+	font-weight: bold;
+	padding-bottom: 6px;
+	border-bottom: 1px solid silver;
+}
+
+.post-content {
+	color: #555555;
+	font-size: 13px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+.post-price {
+	color: black;
+	font-size: 13px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+.post-location {
+	color: black;
+	font-size: 12px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+.post-time {
+	color: #888888;
+	font-size: 11px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	text-align: right;
+}
+
+.post-action {
+	color: #555555;
+	font-size: 12px;
+	padding-top: 4px;
+	padding-bottom: 8px;
+	text-align: right;
+}
+
+.post-edit {
+	padding-right: 10px;
+}
+
+.post-remove {
+	color: red;
+}

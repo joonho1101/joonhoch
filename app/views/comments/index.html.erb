@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Author</th>
     <th>Content</th>
     <th>Post</th>
     <th></th>
@@ -11,6 +12,7 @@
 
 <% @comments.each do |comment| %>
   <tr>
+    <td><%= comment.author %></td>
     <td><%= comment.content %></td>
     <td><%= comment.post_id %></td>
     <td><%= link_to 'Show', comment %></td>

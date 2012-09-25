@@ -1,0 +1,32 @@
+<div class="post">
+	<div class="post-title"><%= post.title %></div>
+	<div class="post-content"><%= post.content %></div>
+	<div class="post-price">Price: $<%= post.price %></div>
+	<div class="post-location">Located at <%= post.location %></div>
+	<div class="post-time">Posted at <%= post.created_at %></div>
+	<div class="post-action"><span class="post-edit"><%= link_to 'Edit', edit_post_path(post) %></span><span class="post-remove"><%= link_to 'Remove', post, method: :delete, data: { confirm: 'Are you sure to delete this post?' } %></span></div>
+	<div class="span8">
+		<div class="comments">
+			<% post.comments.each do |comment| %>
+				<div class="comment">
+					<span class="comment-author">
+						<%= comment.author %>
+					</span>
+					<span class="comment-content">
+						<%= comment.content %>
+					</span>
+					<div class="comment-time">
+						Posted at <%= comment.created_at %>
+					</div>
+				</div>
+			<% end %>
+			<div class="comment">
+				<form name="comment-form" action="comments" onsubmit="return window.createComment(event, this, <%= post.id %>);">
+					<input class="comment-author-write" type="text" placeholder="Name" name="author" size="20"/>
+					<input class="comment-content-write" type="text" placeholder="Write a comment..." name="comment" size="140"/>
+					<input class="comment-content-post" type="submit" value="Post"/>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

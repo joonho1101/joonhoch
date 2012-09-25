@@ -1,30 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
+	<%= render 'show', :post => @post %>
 
-<p>
-  <b>Content:</b>
-  <%= @post.content %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%= @post.price %>
-</p>
-
-<p>
-  <b>Location:</b>
-  <%= @post.location %>
-</p>
-
-<p>
-  <b>Created date:</b>
-  <%= @post.created_date %>
-</p>
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

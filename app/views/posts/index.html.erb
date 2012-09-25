@@ -1,31 +1,7 @@
-<h1>Listing posts</h1>
+<p id="notice"><%= notice %></p>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>Price</th>
-    <th>Location</th>
-    <th>Created date</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= render 'form' %>
 
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <td><%= post.price %></td>
-    <td><%= post.location %></td>
-    <td><%= post.created_date %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+	<%= render 'show', :post => post %>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Post', new_post_path %>

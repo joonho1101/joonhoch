@@ -5,11 +5,9 @@ one:
   content: MyString
   price: 1.5
   location: MyString
-  created_date: 2012-09-23 22:09:14
 
 two:
   title: MyString
   content: MyString
   price: 1.5
   location: MyString
-  created_date: 2012-09-23 22:09:14
