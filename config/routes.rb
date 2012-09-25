@@ -1,9 +1,6 @@
 Joonhoch::Application.routes.draw do
-  resources :comments
-
   resources :posts
-
-  resources :users
+  resources :comments
 
   root :to => 'posts#index'
 

@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Post do
-
 	before do
 		@post = Post.new(
 					title: "Example Title",
