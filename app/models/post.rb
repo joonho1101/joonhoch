@@ -1,8 +1,10 @@
 class Post < ActiveRecord::Base
-  attr_accessible :content, :location, :price, :title
+  attr_accessible :author_id, :title, :content, :location, :price
 
+  belongs_to :author, class_name: "User"
   has_many :comments, dependent: :destroy
 
+  validates :author_id, presence: true
   validates :title, presence: true, length: { maximum: 50 }
   validates :content, presence: true, length: { maximum: 500 }
   validates :location, presence: true, length: { maximum: 100 }

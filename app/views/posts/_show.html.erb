@@ -1,4 +1,5 @@
 <div class="post">
+	<div class="post-author"><%= post.author.name %></div>
 	<div class="post-title"><%= post.title %></div>
 	<div class="post-content"><%= post.content %></div>
 	<div class="post-price">Price: $<%= post.price %></div>
@@ -10,7 +11,7 @@
 			<% post.comments.each do |comment| %>
 				<div class="comment">
 					<span class="comment-author">
-						<%= comment.author %>
+						<%= comment.commentor.name %>
 					</span>
 					<span class="comment-content">
 						<%= comment.content %>
@@ -22,8 +23,7 @@
 			<% end %>
 			<div class="comment">
 				<form name="comment-form" action="comments" onsubmit="return window.createComment(event, this, <%= post.id %>);">
-					<input class="comment-author-write" type="text" placeholder="Name" name="author" size="20"/>
-					<input class="comment-content-write" type="text" placeholder="Write a comment..." name="comment" size="140"/>
+					<input class="comment-content-write" type="text" placeholder="Write a comment..." name="content" size="140"/>
 					<input class="comment-content-post" type="submit" value="Post"/>
 				</form>
 			</div>

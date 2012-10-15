@@ -1,8 +1,22 @@
 Joonhoch::Application.routes.draw do
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :users
   resources :posts
   resources :comments
 
   root :to => 'posts#index'
+  match '/home',  to: 'posts#index'
+  
+  match '/signup',  to: 'users#new'
+  match '/register',  to: 'users#new'
+
+  match '/signin',  to: 'sessions#new'
+  match '/login',  to: 'sessions#new'
+
+  match '/signout', to: 'sessions#destroy', via: :delete
+  match '/logout', to: 'sessions#destroy', via: :delete
+  
+  get "users/new"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
